@@ -1,13 +1,15 @@
-body {
-    background-color: rgba(255, 251, 0, 0.247);
-}
-
 .container {
     display: flex;
     flex-wrap: wrap;
 }
 
 .box {
-    block-size: 50px;
+    block-size: 3.75em;
+    flex-basis: 6.25%;
+}
+
+.hovered-box {
+    background-color: black;
+    block-size: 3.75em;
     flex-basis: 6.25%;
 }
