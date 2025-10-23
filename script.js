@@ -1,16 +1,16 @@
 const container = document.querySelector('.container');
 
-const squaresPerSide = 20;
+let squaresPerSide = 16;
 
-const flexBasis = 100 / squaresPerSide +"%";
+let flexBasis = 100 / squaresPerSide +"%";
 
 for(let i = 1; i <= squaresPerSide*squaresPerSide; i++) {
     const div = document.createElement('div');
     div.className = 'box';
     div.id = `${i}`;
-    div.textContent = `${i}`;
+    //div.textContent = `${i}`;
     container.appendChild(div);
-}
+};
 
 container.addEventListener("mouseover", (event) => {
     event.target.className = 'hovered-box';
@@ -21,3 +21,6 @@ document.querySelectorAll(".box").forEach(box => {
     box.style.flex = `0 0 ${flexBasis}`;
 });
 
+function setSize() {
+    container.innerHTML = "";
+};
