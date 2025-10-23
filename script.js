@@ -6,7 +6,6 @@ function createGrid(squaresPerSide) {
         const div = document.createElement('div');
         div.className = 'box';
         div.id = `${i}`;
-        //div.textContent = `${i}`;
         container.appendChild(div);
     };
 
