@@ -10,8 +10,11 @@ function createGrid(squaresPerSide) {
     };
 
     container.addEventListener("mouseover", (event) => {
-        event.target.className = 'hovered-box';
-    });
+    //Fixes the bug triggered when hovering over the parent container    
+        if (event.target.classList.contains('box')){
+            event.target.className = 'hovered-box';
+        }
+    }); 
 
     //Boxes size is being updated after the number of boxes is chosen:
     document.querySelectorAll(".box").forEach(box => {
