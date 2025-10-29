@@ -1,12 +1,18 @@
 body {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 .container {
     display: flex;
     flex-wrap: wrap;
     border: 2px solid rgba(165, 42, 42, 0.281);
     justify-content: center;
+    align-items: center;
     width: 100%;
+    max-width: 860px;
 }
 
 .box {
@@ -28,4 +34,9 @@ button {
     color: rgb(66, 69, 71);
     font-weight: bold;
     border-radius: 5px;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: rgb(186, 192, 197);
 }
