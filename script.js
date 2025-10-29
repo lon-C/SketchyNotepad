@@ -13,7 +13,8 @@ function createGrid(squaresPerSide) {
     //Fixes the bug triggered when hovering over the parent container    
         if (event.target.classList.contains('box')){
             event.target.className = 'hovered-box';
-        }
+            event.target.style.backgroundColor = randomColor();
+        };
     }); 
 
     //Boxes size is being updated after the number of boxes is chosen:
@@ -41,4 +42,12 @@ function setSize() {
             createGrid(gridSize);
         }
     }
+};
+
+function randomColor() {
+    red =  Math.ceil(Math.random() * (255 - 1) + 1);
+    green =  Math.ceil(Math.random() * (255 - 1) + 1);
+    blue =  Math.ceil(Math.random() * (255 - 1) + 1);
+
+    return `rgb(${red}, ${green}, ${blue})`;
 };
