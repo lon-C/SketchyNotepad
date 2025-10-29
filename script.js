@@ -28,5 +28,17 @@ createGrid(16);
 
 function setSize() {
     container.innerHTML = "";
-    createGrid(prompt('Please choose the size from 0 to 100'));
+    gridSize = Math.ceil(Number(prompt('Please choose the size from 1 to 100')));
+    
+    if (isNaN(gridSize)) {
+        window.alert('Please use numbers only from 1 to 100');
+        createGrid(16);
+    } else if (typeof gridSize === "number") {
+        if (gridSize < 1 || gridSize > 100) {
+            window.alert('The number must be between 1 and 100');
+            createGrid(16);
+        } else if (gridSize > 1 || gridSize <= 100) {
+            createGrid(gridSize);
+        }
+    }
 };
