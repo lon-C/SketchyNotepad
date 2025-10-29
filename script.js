@@ -1,3 +1,4 @@
+let opacity = 0;
 
 function createGrid(squaresPerSide) {
     let flexBasis = 100 / squaresPerSide +"%";
@@ -13,7 +14,16 @@ function createGrid(squaresPerSide) {
     //Fixes the bug triggered when hovering over the parent container    
         if (event.target.classList.contains('box')){
             event.target.className = 'hovered-box';
-            event.target.style.backgroundColor = randomColor();
+            opacity += 1;
+            roundedOpacity = opacity/10;
+            if (roundedOpacity >= 1) {
+                opacity = 0;
+            };
+            let red =  Math.ceil(Math.random() * (255 - 1) + 1);
+            let green =  Math.ceil(Math.random() * (255 - 1) + 1);
+            let blue =  Math.ceil(Math.random() * (255 - 1) + 1);
+            event.target.style.backgroundColor = 
+            `rgba(${red},${green},${blue},${roundedOpacity})`;
         };
     }); 
 
@@ -42,12 +52,4 @@ function setSize() {
             createGrid(gridSize);
         }
     }
-};
-
-function randomColor() {
-    red =  Math.ceil(Math.random() * (255 - 1) + 1);
-    green =  Math.ceil(Math.random() * (255 - 1) + 1);
-    blue =  Math.ceil(Math.random() * (255 - 1) + 1);
-
-    return `rgb(${red}, ${green}, ${blue})`;
 };
